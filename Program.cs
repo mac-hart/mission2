@@ -1,7 +1,8 @@
-﻿using System;
+﻿using dice;
+using System;
 //Author: Mac Hartsell, Section 003
 //Description: A program that simulates the rolling of dice and displays the results in a histogram.
-class DiceSimulator
+public class DiceSimulator
 {
     static void Main()
     {
@@ -29,26 +30,5 @@ class DiceSimulator
 
         Console.WriteLine($"Total number of rolls = {numRolls}.");
         Console.WriteLine("Thank you for using the dice throwing simulator. Goodbye!");
-    }
-}
-
-class DiceRoller
-{
-    private Random random = new Random();
-
-    public int[] Sim(int numRolls)
-    { //results to be sent to first class
-        int[] results = new int[13];
-        // for loop to produce random numbers
-        for (int iCount = 0; iCount < numRolls; iCount++)
-        {
-            int dice1 = random.Next(1, 7);
-            int dice2 = random.Next(1, 7);
-            int sum = dice1 + dice2;
-
-            results[sum]++;
-        }
-
-        return results;
     }
 }
